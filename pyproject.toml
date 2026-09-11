@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokledger"
+version = "0.1.0"
+description = "The local inference ledger: a zero-dependency OpenAI-compatible proxy that prices every request your home GPU serves - tokens, TTFT, tok/s, kWh, $, and the cloud-equivalent."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Adithya N Raj" }]
+keywords = [
+    "llm",
+    "local-llm",
+    "observability",
+    "cost",
+    "proxy",
+    "ollama",
+    "llama-cpp",
+    "mcp",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Monitoring",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+nvml = ["pynvml"]
+
+[project.scripts]
+tokledger = "tokledger.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/adithyanraj03/TokLedger"
+Repository = "https://github.com/adithyanraj03/TokLedger"
+Issues = "https://github.com/adithyanraj03/TokLedger/issues"
+
+[tool.setuptools.packages.find]
+include = ["tokledger*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

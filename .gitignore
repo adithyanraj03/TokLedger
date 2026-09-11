@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local ledger data (default ~/.tokledger; override with TOKLEDGER_DATA)
+*.db
+*.db-journal
+tokledger-data/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
